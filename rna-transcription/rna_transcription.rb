@@ -4,12 +4,12 @@ class Complement
 
     dna_sequence.each_char do |nucleotide|
       rna_aminoacid = transcribe_to_rna(nucleotide)
-
-      return transcribed_rna = "" if rna_aminoacid == ""
-
-      transcribed_rna << rna_aminoacid
+      if rna_aminoacid
+        transcribed_rna << rna_aminoacid
+      else
+        return transcribed_rna = ""
+      end
     end
-
     transcribed_rna
   end
 
@@ -25,7 +25,7 @@ class Complement
       when 'A'
         'U'
       else
-        ''
+        false
       end
     end
 end
