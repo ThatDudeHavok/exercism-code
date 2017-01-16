@@ -17,3 +17,7 @@ class Squares
     square_of_sum - sum_of_squares
   end
 end
+
+module BookKeeping
+  VERSION = 3
+end
