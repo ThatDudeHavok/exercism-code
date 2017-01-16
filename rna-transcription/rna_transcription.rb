@@ -7,7 +7,7 @@ class Complement
       if rna_aminoacid
         transcribed_rna << rna_aminoacid
       else
-        return transcribed_rna = ""
+        return ""
       end
     end
     transcribed_rna
