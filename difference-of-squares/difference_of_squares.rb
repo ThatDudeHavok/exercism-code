@@ -4,12 +4,16 @@ class Squares
   end
 
   def square_of_sum
-    (1..@total).reduce(:+)**2
+    @total == 0 ? 0 : (1..@total).reduce(:+)**2
   end
 
   def sum_of_squares
-    (1..@total).reduce do |total, number|
+    @total == 0 ? 0 : (1..@total).reduce do |total, number|
       total = (total + number**2)
     end
+  end
+
+  def difference
+    square_of_sum - sum_of_squares
   end
 end
