@@ -1,19 +1,20 @@
 class Squares
-  def initialize(total)
-    @total = total
+  def initialize(limit)
+    @limit = limit
   end
 
   def square_of_sum
-    @total == 0 ? 0 : (1..@total).reduce(:+)**2
+    (1..@limit).reduce(:+)**2
   end
 
   def sum_of_squares
-    @total == 0 ? 0 : (1..@total).reduce do |total, number|
+    (1..@limit).reduce do |total, number|
       total = (total + number**2)
     end
   end
 
   def difference
+    return 0 if @limit == 0
     square_of_sum - sum_of_squares
   end
 end
